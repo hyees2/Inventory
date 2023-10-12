@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html{
+  font-size: 14px;
+  }
+  
+  
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Abhaya Libre', serif, 'Inconsolata', monospace;
+  }
+  
+
+
+  /* UP */
+.left-div {
+  padding: 10px;
+  float: left;
+  max-height: 5vh;
+  width: 30vw;
+  position: relative; /* 부모 요소로부터의 상대 위치 설정 */
+  resize: none;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  display: inline-block;
+  background-color: #000000;
+  max-width: fit-content; /* 텍스트에 맞게 최소한의 너비를 설정 */
+  padding: 5px; /* 원하는 여백 설정 */
+}
+
+.right-div {
+  float: left;
+  max-height: 5vh;
+  width: 66vw;
+  display: flex; /* right-div를 Flexbox로 설정 */
+  position: relative;
+  resize: none;
+  overflow: hidden;
+}
+
+.last-div {
+  width: auto;
+  max-height: 5vh;
+  resize: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 10px;
+  text-align: right;
+}
+
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 이미지 스타일 설정 */
+.Refresh {
+  width: 20px; /* 이미지의 원래 크기로 설정 (조절 가능) */
+  height: 20px;
+  object-fit: contain; /* 이미지의 가로세로 비율 유지 */
+  transition: transform 0.5s; /* 회전 애니메이션에 대한 전환 효과 설정 */
+}
+
+/* 이미지를 후버할 때 회전 애니메이션 적용 */
+.Refresh:hover {
+  animation: rotate360 2s infinite linear; /* 후버할 때 애니메이션 활성화 */
+}
+
+
+
+
+/* Script */
+/* Script */
+/* Script */
+.script {
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center and scale down */
+  resize: none;
+  font-family: "courier-std", monospace;
+  font-weight: 400;
+  font-style: normal;
+  z-index: 99999;
+}
+
+
+.square {
+  width: 50vw; /* 원하는 가로 크기 */
+  height: 100vh; /* 원하는 세로 크기 */
+  background-color: white; /* 흰색 배경색 */
+}
+
+
+.hidden {display:none;}
+
+
+/* script text 조정 */
+
+.Center-text {
+  text-align: center; /* 텍스트 가운데 정렬 */
+  display: block; /* 블록 요소로 변경 */
+  font-family: "courier-std", monospace;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.4rem;
+}
+
+.Script-text {
+  color:black;
+  position:absolute;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height:1.4rem;  /* 자간*/
+  text-indent: 2rem;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:110px;
+  resize: none;
+}
+
+
+/* script가 hover될 때 스타일 변경 */
+.script:hover {
+  box-shadow: none;
+}
+
+/* 스크립트가 다시 hover될 때 스타일 변경 */
+.script:hover:hover {
+  box-shadow: 0 100px 100px 0px ;
+}
+
+
+div {
+  resize: none;
+  margin: 0 10px; /* 양쪽 여백 크기를 조절하세요. */
+  overflow: auto;
+  text-align: left;
+}
+
+
+
+
+/* footnote */
+
+.footnote {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: calc(50% + 50px); /* 50px 만큼 오른쪽으로 이동 (원하는 값으로 조정) */
+  transform: translateX(-20%);
+  background-color: white; /* 흰색 배경 설정 */
+  padding: 5px; /* 내부 여백 설정 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  white-space: normal; 
+  text-align: left; 
+  font-size: 0.7rem; /* 원하는 폰트 크기로 조정 */
+  line-height: 0.9rem;
+  width: 20vw; /* 원하는 너비로 조정 */
+  z-index: 1;
+}
+
+.hoverable:hover .footnote {
+  display: block; /* hover 시 말풍선을 표시합니다. */
+}
+
+.orange {
+  color: orange; /* '1'의 텍스트 색상을 오렌지로 설정 */
+}
+
+.hoverable:hover .orange {
+  color: black; /* hover 시 '1'의 텍스트 색상을 원래 색상으로 변경 */
+}
+
+
+
+
+/* inventory */
+.Section_1,
+.Section_2,
+.InventoryList {
+  display: inline-block;
+  resize: horizontal; /* 가로 및 세로 리사이즈 허용 */
+  overflow: auto; /* 컨텐츠가 넘칠 경우 스크롤바 표시 */
+  border: 1px solid #ccc; /* 테두리 추가 (선택 사항) */
+  padding: 10px; /* 내용과 테두리 간격 (선택 사항) */
+  height: 95vh; /* 내용에 맞게 높이 조절 */
+  max-width: 100vw; /* 최대 너비 설정 (선택 사항) */
+}
+/* 지우지마... 각 칸에 대한 리사이즈 */
+
+
+/* Title */
+  /* 텍스트 섹션 스타일 설정 */
+.right-div section {
+  color: black; /* 초기 텍스트 색상 */
+  cursor: pointer; /* 호버 시 포인터 커서로 변경 (선택 사항) */
+}
+
+      /* 텍스트 섹션 호버 스타일 설정 */
+.right-div section:hover {
+  background-color: black; /* 클릭 시 배경색 변경 */
+  color: white; /* 클릭 시 텍스트 색상 변경 */
+  height: 2vh;
+}
+
+      /* 클릭된 텍스트 섹션 스타일 설정 */
+.right-div section.clicked {
+  background-color: black;
+  color: white;
+  height: 2vh;
+}
+  
+
+
+  .container {
+    display: grid;
+    width: 100vw;
+    height: 95vh;
+    grid-template-areas: "Section_1 Section_2 InventoryList";
+    grid-template-columns: 1.5fr 1.5fr 7fr;
+    grid-template-rows: 1fr;
+  }
+
+  
+  .container > div {
+    border: 1px dashed #888;     /* 나중에지워 */
+  }
+
+
+/* 화면 너비가 500px 이하일 때 (모바일 뷰) */
+@media (max-width: 500px) {
+  /* 여기에 스타일 조정 추가 (예: 글꼴 크기, 패딩, 마진) */
+.footnote {
+  font-size: 0.3rem; /* .footnote 클래스에 대한 글꼴 크기를 조절 */
+}
+.Center-text {
+  font-size: 0.8rem;
+}
+.Script-text {
+  font-size: 0.7rem;
+}
+.bold-text {
+  font-size: 0.1rem; /* 원하는 크기로 조절 */
+}
+.Info, .History{
+  font-size:0.5rem;
+}
+.test,
+.test2,
+.test3,
+.test4,
+.test5 {
+  font-size: 0.4rem;
+}
+}
+
+
+
+
+
+/* 화면 너비가 700px 이하일 때 (모바일 뷰) */
+@media (max-width: 700px) {
+  /* 여기에 스타일 조정 추가 (예: 글꼴 크기, 패딩, 마진) */
+.footnote {
+  font-size: 0.4rem; /* .footnote 클래스에 대한 글꼴 크기를 조절 */
+}
+.Center-text {
+  font-size: 1rem;
+}
+.Script-text {
+  font-size: 0.9rem;
+}
+.bold-text {
+  font-size: 0.9rem; /* 원하는 크기로 조절 */
+}
+.Info, .History{
+  font-size:0.7rem;
+}
+.test,
+.test2,
+.test3,
+.test4,
+.test5 {
+  font-size: 0.6rem;
+}
+}
+
+/* 화면 너비가 800px 이하일 때 (태블릿 뷰) */
+@media (max-width: 800px) {
+  /* 여기에 스타일 조정 추가 (예: 글꼴 크기, 패딩, 마진) */
+    .footnote {
+      font-size: 0.5rem; /* .footnote 클래스에 대한 글꼴 크기를 조절 */
+    }
+    .Center-text {
+      font-size: 1.1rem;
+    }
+    .Script-text {
+      font-size: 1rem;
+    }
+    .bold-text {
+      font-size: 1rem; /* 원하는 크기로 조절 */
+    }
+    .Info, .History {
+      font-size:0.8rem;
+  }
+  .test,
+.test2,
+.test3,
+.test4,
+.test5 {
+  font-size: 0.7rem;
+}
+}
+
+
+/* 화면 너비가 1200px 이하일 때 (데스크톱 뷰) */
+@media (max-width: 1200px) {
+  /* 글꼴 크기를 줄임 */
+  .footnote {
+    font-size: 0.6rem; /* .footnote 클래스에 대한 글꼴 크기를 조절 */
+  }
+  .Center-text {
+    font-size: 1.2rem;
+  }
+  .Script-text {
+    font-size: 1.1rem;
+  }
+  .bold-text {
+    font-size: 1.1rem; /* 원하는 크기로 조절 */
+  }
+  .Info, .History {
+    font-size:0.9rem;
+}
+
+.test,
+.test2,
+.test3,
+.test4,
+.test5 {
+  font-size: 0.8rem;
+}
+}
+
+
+  /* 각 column의 text 조정. */
+  /* info column + History */
+
+  .Info {
+    font-size:1rem;
+    text-indent:1rem;
+    line-height:1.1rem;  /* 자간*/
+    text-align:left;
+    padding:10px;
+ }
+
+ .bold-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height:1.4rem;
+}
+
+.styled-question {
+  margin-left: 2rem; /* 들여쓰기 크기 (원하는 크기로 조정) */
+  color: #333; /* 텍스트 색상 설정 (원하는 색상으로 변경 가능) */
+  border-left: 2px solid #333; /* 왼쪽에 세로 줄 추가 (원하는 색상과 두께로 변경 가능) */
+  padding-left: 10px; /* 왼쪽 여백 설정 */
+  font-weight: bold;
+}
+
+
+  .History {
+    font-size:1rem;
+    line-height:1.2rem;
+    text-indent:1rem;
+    text-align:left;
+    padding:10px;
+ }
+
+
+  /* shelve floor 적혀있는 글자들조절됨. */
+  .total {
+    display: flex;
+    flex-direction: row; /* 가로로 배치 */
+    justify-content: left; /* 세로 정렬 */
+  }
+
+  /* 위에 title */
+  .Shelve,
+  .Floor,
+  .Wall,
+  .Ceiling,
+  .City {
+    flex-basis: 60px; /* 동일한 너비로 설정 */
+    text-align: center; 
+    margin: 10px 0; /* 위아래 간격 설정 */
+  }
+
+
+  /* inside obj */
+  .test,
+  .test2,
+  .test3,
+  .test4,
+  .test5 {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 40vh; /* 높이를 더 작게 조정할수도 / 100이 다 펼쳐지는거.*/
+    padding: 5px;
+    margin: 5px auto;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    text-indent: 1rem;
+    text-align: left;
+    overflow-x: auto; /* 오토였음*/
+    overflow-y: auto; /* 오토였음*/
+    resize: both; /* 지금은세로 */
+}
+/* 이거 넣어서 섹션3에만 줄생김. */
+
+
+
+
+
+#checkBtn{
+  display:none;
+  pointer-events: none; /* 요소에 대한 이벤트 처리 비활성화 */
+  resize: none;
+  }
+  
+
+#listing {
+  display:inline-flex;
+  }
+/* 이거 넣으면 양쪽으로 쭉 됨. */
